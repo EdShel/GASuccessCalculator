@@ -4,10 +4,19 @@ namespace GASuccessCalculator.Model
 {
     public class DayInfo
     {
+        /// <summary>
+        /// When the data has been collected
+        /// </summary>
         public DateTime Date { set; get; }
 
+        /// <summary>
+        /// In-app payments revenue
+        /// </summary>
         public double IAPRevenue { set; get; }
 
+        /// <summary>
+        /// Revenue from advertisements
+        /// </summary>
         public double AdsRevenue { set; get; }
 
         /// <summary>
@@ -16,10 +25,19 @@ namespace GASuccessCalculator.Model
         /// </summary>
         public double DAU { set; get; }
 
+        /// <summary>
+        /// Monthly active users
+        /// </summary>
         public double MAU { set; get; }
 
+        /// <summary>
+        /// Total active users of all times.
+        /// </summary>
         public double LAU { set; get; }
 
+        /// <summary>
+        /// New users that came this day.
+        /// </summary>
         public int NewUsers { set; get; }
 
         /// <summary>
@@ -27,8 +45,14 @@ namespace GASuccessCalculator.Model
         /// </summary>
         public int PAU { set; get; }
 
+        /// <summary>
+        /// How many social network posts has been made.
+        /// </summary>
         public int SocialNetPosts { set; get; }
 
+        /// <summary>
+        /// Average duration of the play session.
+        /// </summary>
         public double AvgSessionDur { set; get; }
 
         /// <summary>
@@ -39,13 +63,6 @@ namespace GASuccessCalculator.Model
         /// it is unlikely to keep their attention for long.
         /// </summary>
         public double AvgSessionCount { set; get; }
-
-        public override string ToString()
-        {
-            return $"{Date: yyyy-MM-dd} {IAPRevenue:$0.00} {AdsRevenue:$0.00} " +
-                    $"{DAU} {MAU} {LAU} {NewUsers} {PAU} {SocialNetPosts} " +
-                    $"{AvgSessionDur:0.00} {AvgSessionCount:0.00}";
-        }
 
         /// <summary>
         /// Paying users.
@@ -70,5 +87,16 @@ namespace GASuccessCalculator.Model
         /// of users who have completed a purchase in a game. 
         /// </summary>
         public double ARPPU => IAPRevenue / PAU;
+
+        /// <summary>
+        /// For printing and debugging
+        /// </summary>
+        public override string ToString()
+        {
+            return $"{Date: yyyy-MM-dd} {IAPRevenue:$0.00} {AdsRevenue:$0.00} " +
+                    $"{DAU} {MAU} {LAU} {NewUsers} {PAU} {SocialNetPosts} " +
+                    $"{AvgSessionDur:0.00} {AvgSessionCount:0.00}";
+        }
+
     }
 }
